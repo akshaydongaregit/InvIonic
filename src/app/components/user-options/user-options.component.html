@@ -1,0 +1,6 @@
+<div id="user-options" [class.show]="show" >
+  <ul>
+    <li class="link" > {{ user==''?'Please Login':user }} </li>
+    <li (click)="doLogout()" class="link" > Log Out </li>
+  </ul>  
+</div>

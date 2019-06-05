@@ -1,1 +1,323 @@
-/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+body{
+    background: white/* #181717fa; /* 181717fa */
+}
+
+/*style for sidebar */
+#sidebar{
+    position: fixed;
+    width: 6%;
+    height: 100%;
+    background: #080808;/*400357|190222*/
+    left:-80px;
+}
+
+#sidebar.active{
+    left:0px;
+    transition: all 300ms linear;
+}
+
+
+#sidebar ul li{
+    color: rgba(255, 255, 255, 0.918);
+    list-style: none;
+    height: 80px;
+    width: 100%;
+    padding:15px 10px;
+    border-bottom: 1px solid rgba(243, 140, 6, 0.466);
+    box-sizing: border-box;
+    margin: 0px 0px;
+}
+
+#sidebar ul li:nth-child(1){
+    margin-top:80px;
+    color:rgba(14, 161, 230, 0.89);
+}
+
+#sidebar ul li:hover{
+    border-bottom: 5px solid rgba(5, 91, 250, 0.9);
+    transition: all 20ms linear;
+    background: rgb(245, 248, 246);
+    color: rgb(0, 0, 0);
+}
+
+#sidebar .toggle-btn{
+    position: absolute;
+    left:85px;
+    top:2px;
+
+}
+
+#sidebar .toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #fa9702;
+    margin: 3px 0px;
+    border-radius: 10px;
+}
+
+#sidebar ul li.home{
+    background-image: url('./assets/images/icons8-center-of-gravity-96.png') ;
+    background-size: cover;
+}
+#sidebar ul li.inventory{
+    background-image: url('./assets/images/icons8-open-box-96.png') ;
+    background-size: cover;
+}
+#sidebar ul li.settings{
+    background-image: url('./assets/images/icons8-automatic-100.png') ;
+    background-size: cover;
+}
+
+/*******************  style for sidebar ends here ************************/
+
+/*  style for header and footer */
+#header{
+    position: fixed;
+    top: 0px;
+    margin: 0px;
+    padding: 0px 0px;
+    width:100%;
+    height:60px;
+    background: rgba(8, 8, 8,0.8); /*61, 60, 102, 0.9*/
+    border-bottom:solid 0px white; /* #25353db0 */;
+    box-sizing: border-box;
+}
+
+#header .user-nav{
+    position: fixed;
+    top:0px;
+    left:90%;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    width:10%;
+    height:60px;
+}
+
+#header .user-nav ul li{
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    padding:0px 0px;
+    box-sizing: border-box;
+    margin: 0px 0px;
+    float: left;
+}
+#header .user-nav ul li:hover{
+    background: rgba(0, 4, 8, 0.911);
+    transition: all 400ms linear;
+}
+
+#header .user-nav ul li.msg{
+    background-image: url('./assets/images/icons8-chat-settings-64.png') ;
+    background-size: cover;
+}
+
+#header .user-nav ul li.prof{
+    background-image: url('./assets/images/icons8-user-menu-male-64.png') ;
+    background-size: cover;
+}
+
+#header #title .title {
+    position: fixed;
+    top:0px;
+    left:0%;
+    margin: 0px;
+    padding: 0px;
+    height: 60px;
+    padding-left: 10%;
+    padding-right:2% ;
+    padding-top: 5px;
+    font:bold 180% Consolas , "Segoe UI" , Calibri ;
+    background: rgb(1, 7, 20);
+    color:rgb(137, 115, 194);
+    box-sizing: border-box;
+    border-bottom:solid 3px blueviolet;
+}
+#header #title .title span{
+    font:bold 50% "Segoe UI" , Calibri ;
+}
+
+/*footer starts */
+#footer{
+    position: fixed;
+    bottom: 0px;
+    height: 4%;
+    width: 100%;
+    color: white;
+    margin: 0px;
+    padding: 3px 105px;
+    background: rgba(0, 4, 8, 0.911);
+    font:normal 90% arial , verdana;
+    letter-spacing: 1px;
+}
+span.red{
+    color:red;
+}
+span.blue{
+    color:blue;
+}
+span.yellow{
+    color: #fa9702;
+}
+
+/************  style for header and footer  ends here ***************
+
+/*** for body **/
+#body{
+    position:fixed;
+    top: 60px;
+    left: 6%;
+    width: 94%;
+    height: 85%;
+    background: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    color:white;
+    overflow: auto;
+}
+
+.form .input{
+    display: block;
+    margin: 5px;
+    padding: 0px;
+    width:50%;
+    height:30px;
+}
+
+/* for card component */
+.card{
+}
+
+.card .card-header{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 20%;
+    padding-left:10%;
+    box-sizing: border-box;
+}
+
+.card .card-body{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    left:0px;
+    bottom: 0px;
+    margin: 0px;
+}
+.card.round{
+    border-radius: 10px;
+}
+
+/*  btn degines */
+
+.btn.flat {
+    display: inline;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0,0);
+    border:1px solid black;
+    color:black;
+    font : normal 100% Calibri , "Arial";
+}
+.btn.flat.blue{
+    color:white;
+    background: rgb(43, 139, 248);
+    border:0px solid;
+}
+
+.btn.flat.yellow{
+    color:white;
+    background: rgb(247, 202, 3);
+    border:0px solid;
+}
+.btn.flat.blue:hover{
+    color:black;
+    background: rgba(43, 139, 248,0);
+    border:2px solid rgb(43, 139, 248); 
+}
+
+.btn.flat.yellow:hover{
+    color:black;
+    background: rgba(247, 230, 3,0);
+    border:2px solid rgb(247, 230, 3); 
+}
+
+.link{
+    font:normal 90% Calibri , "Segoe UI" ;
+    border-bottom: 3px solid white; 
+    cursor: pointer;
+}
+
+/* menu card */
+
+.menu-cards{
+    display: flex;
+    margin: 1% 1%;
+    margin-left: 1%;
+    padding:1% ;
+    box-sizing: border-box;
+    background: rgba(16, 2, 48,0);
+    width: min-content;
+    border-radius: 10px;
+}
+
+.menu-card{
+    display: inline-block;
+    margin: 1% 1%;
+    padding:0px ;
+    box-sizing: border-box;
+    width:160px;
+    height: 160px;
+    background: rgb(20, 2, 31);
+    border-radius: 10px;
+    cursor: pointer;
+    cursor: hand;
+}
+.menu-card .icon {
+    position:relative;
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left:0px;
+    width:100%;
+    height: 70%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-sizing: border-box;
+}
+
+.menu-card .desc{
+    position: relative;
+    margin: 0px;
+    padding: 10%;
+    left:0px;
+    bottom: 0px;
+    width:100%;
+    height: 30%;
+    background: #437ce7;
+    color:white;
+    font:normal 100% Calibri , "Segoe UI";
+    box-sizing: border-box;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.menu-card .desc span{
+    font:normal 100% Calibri , "Segoe UI";
+}
+
+.view-all{
+    background: url('./assets/images/icons8-to-do-100.png') no-repeat;
+    background-size: contain;
+}
+.add-item{
+    background: url('./assets/images/icons8-create-document-100.png') no-repeat;
+    background-size: contain;
+}

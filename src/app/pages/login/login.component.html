@@ -1,0 +1,15 @@
+<div id="login" class="card round">
+  <div id="login-card-back"> </div>
+      <div class="card-header">
+          <span class="lbl" id="title"> Log In </span>
+      </div>
+      <div class="card-body">
+          <form id="login-form" class="form">
+              <input type="text" [(ngModel)]="cred.username" class="input flat" name="username" id="username" placeholder="Enter User Name">
+              <input type="password" [(ngModel)]="cred.password" class="input flat" name="pswd" id="pswd" placeholder="Enter User Password">
+              <span>Forget Password ?</span> <br/>
+              <input type="button" id="login-btn" (click)="doLogin()" class="btn flat blue" value="Login" >
+              <input type="button" id="signup" routerLink="/signup" class="btn flat yellow" value="Sign Up" >
+          </form>
+      </div>
+</div>

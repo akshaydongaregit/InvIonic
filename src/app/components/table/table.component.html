@@ -1,0 +1,23 @@
+
+<div class="table" id="inv-list" >
+    <table >
+      <tr>
+        <th class="add-head"></th>
+        <th *ngFor="let col of _settings.cols"> {{ col.title }} </th>
+        <th class="view-head"></th>
+        <th class="delete-head"></th>
+      </tr>
+      <tr>
+        <td class="add" (click)="handleAddClick()"></td>
+        <td *ngFor="let col of _settings.cols" > 
+          <input *ngIf='col.filter' type="text"  (keyup)='doFilter($event,col.value);' class="filter" > 
+        </td>
+      </tr>
+      <tr *ngFor="let item of _dataSource;" >
+        <td class="save" (click)="handleSaveClick(item)" > </td>
+        <td *ngFor="let col of _settings.cols"> <input type="text" [(ngModel)]='item[col.value]' > </td>
+        <td class="view" (click)="handleViewClick(item)"> </td>
+        <td class="delete" (click)="handleDeleteClick(item)"> </td>
+      </tr>
+    </table>
+  </div>

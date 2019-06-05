@@ -1,0 +1,29 @@
+
+#user-options.show{
+    display:block;
+    position: absolute;
+    top: 60px;
+    right: 1%;
+    margin: 0px;
+    padding: 0px;
+    width:10%;
+    background: #0698d1;
+    border:solid 1px #08080807;
+    box-sizing: border-box;
+}
+
+#user-options{
+    display: none;
+}
+
+#user-options ul li{
+    display: block;
+    color: rgba(255, 255, 255, 0.918);
+    list-style: none;
+    height: 40px;
+    width: 100%;
+    padding:10px 15px;
+    border-bottom: 1px solid rgba(68, 40, 3, 0.267);
+    box-sizing: border-box;
+    margin: 0px 0px;
+}
