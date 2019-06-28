@@ -1,3 +1,31 @@
-<p>
-  add works!
-</p>
+<div class="container" >
+	<h2 class="title">Add Item</h2>	
+	<form>
+		<div class="form-group">
+			<label> Id </label>
+			<input type="text" class="form-control" name="id" readonly="" [(ngModel)]="_item.id" >
+		</div>
+		<div class="form-group">
+				<label>Code</label>
+				<input type="text" class="form-control" name="code" [(ngModel)]="_item.code" >
+		</div>
+		<div class="form-group">
+				<label>Name</label>
+				<input type="text" class="form-control" name="name"  [(ngModel)]="_item.name" >
+		</div>
+		<div class="form-group">
+				<label>Price</label>
+				<input type="text" class="form-control" name="price"  [(ngModel)]="_item.price" >
+		</div>
+		<div class="form-group">
+				<label>Unit</label>
+				<input type="text" class="form-control" name="unit"  [(ngModel)]="_item.unit" >
+		</div>
+		<div class="form-group">
+			<label>Quantity</label>
+			<input type="text" class="form-control" name="quantity"  [(ngModel)]="_item.quantity" >
+		</div>
+		<button type="button" (click)="handleSave();" >Save</button>
+		<button type="button" [routerLink]="['/inventory']" >Cancel</button>
+	</form>
+</div>

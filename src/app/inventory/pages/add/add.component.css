@@ -1,0 +1,38 @@
+.container{
+    background: rgba(51, 247, 51, 0.849);
+    color:rgba(40,40,10,1);
+    width: fit-content;
+    margin-left: 5%;
+    margin-top:1%;
+    border-radius: 10px;
+    padding: 2%;
+}
+.form-group label{
+    display: block;
+    margin-top:10px;
+    font:bold 100% "Arial" , "Segoe UI";
+}
+
+.form-group input{
+    display: block;
+    width:500px;
+    height:35px;
+    padding-left: 2%;
+    background: rgba(0,0,0,0);
+    border:1px solid green;
+    border-radius: 10px;
+    font:bold 100% "Arial" , "Segoe UI";
+}
+
+button {
+    margin:1%;
+    padding: 2%;
+    width:fit-content;
+    height: 40px;
+    font:bold 100% "Arial" , "Segoe UI";
+    background: rgba(2, 48, 2, 0.849);
+    color: black;
+    border:2px solid rgba(0,0,0,0);
+    border-radius: 5px;
+    color:white;
+}

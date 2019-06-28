@@ -69,7 +69,7 @@ export class ListComponent implements OnInit {
       {
         title: 'Quantity' ,
         width: '10px' ,
-        value: 'id' ,
+        value: 'quantity' ,
         filter: true
       }
     ] ,
@@ -103,13 +103,25 @@ export class ListComponent implements OnInit {
   }
 
   saveItem(item: Item) {
+    if ( item.id == null) {
       console.log('saving : ' + JSON.stringify(item));
-      this.invs.saveItem(item).subscribe(res => console.log(JSON.stringify(res)) );
+      this.invs.saveItem(item).subscribe(res => {
+        this.showResult(res);
+        this.fetchAndUpdateList();
+      } );
+    } else {
+      console.log('updating : ' + JSON.stringify(item));
+      this.invs.updateItem(item).subscribe(res => {
+        this.showResult(res);
+        this.fetchAndUpdateList();
+      });
+    }
     }
 
   fetchAndUpdateList() {
       this.invList = [];
-      this.invs.getItemList().subscribe(res => { console.log('res : ' + JSON.stringify(res));
+      this.invs.getItemList().subscribe(res => {
+        console.log('res : ' + JSON.stringify(res));
         this.invList = this.invList.concat(res);
       });
       //this.invList = this.mockList;
@@ -117,12 +129,19 @@ export class ListComponent implements OnInit {
 
   deleteItem(item: Item) {
     console.log('deleting : ' + JSON.stringify(item));
-    this.invs.deleteItem(item).subscribe(res => console.log(JSON.stringify(res)) );
+    this.invs.deleteItem(item).subscribe(res => {
+      this.showResult(res);
+      this.fetchAndUpdateList();
+    } );
   }
 
   viewItem(item: Item) {
     console.log('viewing : ' + JSON.stringify(item));
-    this.route.navigate(['/inventory/edit/' + item.id]);
+    //this.route.navigate(['/inventory/edit/' + item.id]);
   }
 
+  showResult(result: any) {
+    console.log('result' + JSON.stringify( result));
+    //alert('Success' + JSON.stringify( result));
+  }
 }
