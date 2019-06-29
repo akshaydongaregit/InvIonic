@@ -8,7 +8,7 @@ import { Item } from '../models/item';
 })
 export class InventoryService {
 
-  apiBase =  'https://invmansl.herokuapp.com' ; // 'http://localhost:3000' 
+  apiBase =  'https://invmansl.herokuapp.com' ; // 'http://localhost:3000'
 
   constructor(private http: HttpClient) { }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../../models/item';
 import { InventoryService } from '../../shared/inventory.service';
+import { SweetPopupService } from 'src/app/components/sweetpopup/sweet-popup.service';
 
 @Component({
   selector: 'app-add',
@@ -19,7 +20,7 @@ export class AddComponent implements OnInit {
     desc: ''
   };
 
-  constructor(private invs: InventoryService) { }
+  constructor(private invs: InventoryService , private popup: SweetPopupService) { }
 
   ngOnInit() {
   }
@@ -28,19 +29,19 @@ export class AddComponent implements OnInit {
     if ( this._item.id == null) {
       console.log('saving : ' + JSON.stringify(this._item));
       this.invs.saveItem(this._item).subscribe(res => {
-        this.showResult(res);
+        this.showResult(res , 'Inserted SuccessFully!');
       } );
     } else {
       console.log('updating : ' + JSON.stringify(this._item));
         this.invs.updateItem(this._item).subscribe(res => {
-        this.showResult(res);
+        this.showResult(res, 'Updated SuccessFully!');
       });
     }
   }
 
- showResult(result: any) {
+ showResult(result: any, desc: string) {
    console.log('result' + JSON.stringify( result));
-   alert('Success' + JSON.stringify( result));
+   this.popup.showSuccessPopup({ title: 'Success' , desc: desc });
  }
 
 }

@@ -321,3 +321,75 @@ span.yellow{
     background: url('./assets/images/icons8-create-document-100.png') no-repeat;
     background-size: contain;
 }
+/*************************************/
+
+/***********************
+	CSS for Popup
+**************************/
+
+
+@keyframes simple {
+  from {background: white;color:rgba(0,0,0,0)}
+  to {}
+}
+
+.popup {
+    width:max-content;
+    height: max-content;
+    border-radius:20px; 
+    padding: 2%;
+    box-sizing:content-box;
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: none;
+}
+.popup .title {
+    padding-top: 0px;
+    margin-top:0px;
+    padding: 2%;
+	margin-block-end: 5px;
+}
+
+.popup .desc {
+    padding-top: 2%;
+    box-sizing:border-box;
+}
+
+
+.popup.success {
+ background: rgba(159, 249, 135,1);
+}
+.popup.success .title {
+    color: rgba(  44, 117, 4 ,1);
+    font: bold 120% "segoe UI";
+}
+
+.popup.success .desc {
+    color: rgba( 33,41,31,1);
+    font: bold 90% Arial , "segoe UI";
+}
+
+
+.popup.show {
+    display: block;
+	animation-name:simple;
+  animation-duration: .05s;
+}
+
+.popup.error {
+ background: rgb(  240, 207, 84  );
+}
+.popup.error .title {
+    color: rgba( 210, 80, 6    ,1);
+    font: bold 120% Calibri , "segoe UI";
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.popup.error .desc {
+    color: rgba( 41, 22, 11 ,1);
+    font: bold 90% 'Noto Sans JP' , Arial , "segoe UI";
+}

@@ -2,6 +2,8 @@ import { Component, OnInit, Optional } from '@angular/core';
 import { InventoryService } from '../../shared/inventory.service';
 import { Item } from '../../models/item';
 import { Router } from '@angular/router';
+import { SweetPopupService } from 'src/app/components/sweetpopup/sweet-popup.service';
+
 
 @Component({
   selector: 'app-list',
@@ -77,7 +79,7 @@ export class ListComponent implements OnInit {
 
   idCnt = 2;
 
-  constructor( private invs: InventoryService, private  route: Router ) {
+  constructor( private invs: InventoryService, private  route: Router , private popup: SweetPopupService) {
   }
 
   ngOnInit() {
@@ -106,13 +108,13 @@ export class ListComponent implements OnInit {
     if ( item.id == null) {
       console.log('saving : ' + JSON.stringify(item));
       this.invs.saveItem(item).subscribe(res => {
-        this.showResult(res);
+        this.showResult(res , 'Inserted SuccessFully!');
         this.fetchAndUpdateList();
       } );
     } else {
       console.log('updating : ' + JSON.stringify(item));
       this.invs.updateItem(item).subscribe(res => {
-        this.showResult(res);
+        this.showResult(res , 'Updated SuccessFully!');
         this.fetchAndUpdateList();
       });
     }
@@ -130,7 +132,7 @@ export class ListComponent implements OnInit {
   deleteItem(item: Item) {
     console.log('deleting : ' + JSON.stringify(item));
     this.invs.deleteItem(item).subscribe(res => {
-      this.showResult(res);
+      this.showResult(res, 'Deleted SuccessFully!');
       this.fetchAndUpdateList();
     } );
   }
@@ -140,8 +142,13 @@ export class ListComponent implements OnInit {
     //this.route.navigate(['/inventory/edit/' + item.id]);
   }
 
-  showResult(result: any) {
+  showResult(result: any , desc: string) {
     console.log('result' + JSON.stringify( result));
-    //alert('Success' + JSON.stringify( result));
+    if ( result.error == null) {
+        this.popup.showSuccessPopup({ title: 'Success' , desc: desc});
+    } else {
+      this.popup.showSuccessPopup({ title: 'Error' , desc: JSON.stringify(result)});
+    }
   }
+
 }

@@ -10,7 +10,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { UserOptionsComponent } from './components/user-options/user-options.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { TableComponent } from './components/table/table.component';
+import { SweetPopupComponent } from './components/sweetpopup/sweet-popup.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { TableComponent } from './components/table/table.component';
     SignupComponent,
     SettingsComponent,
     UserOptionsComponent,
+    SweetPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +29,7 @@ import { TableComponent } from './components/table/table.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] ,
+  entryComponents: [SweetPopupComponent] ,
 })
 export class AppModule { }
