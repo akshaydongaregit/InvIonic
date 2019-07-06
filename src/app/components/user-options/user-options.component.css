@@ -7,9 +7,10 @@
     margin: 0px;
     padding: 0px;
     width:10%;
-    background: #0698d1;
-    border:solid 1px #08080807;
+    background: #fbfcfd;
+    border:solid 2px #07135445;
     box-sizing: border-box;
+    border-radius: 5px
 }
 
 #user-options{
@@ -18,12 +19,15 @@
 
 #user-options ul li{
     display: block;
-    color: rgba(255, 255, 255, 0.918);
+    color: rgba(81, 21, 103, 0.58);
     list-style: none;
     height: 40px;
     width: 100%;
     padding:10px 15px;
-    border-bottom: 1px solid rgba(68, 40, 3, 0.267);
+    border-bottom: 1px solid rgba(58, 64, 157, 0.32);
     box-sizing: border-box;
     margin: 0px 0px;
+}
+#user-options ul li:last-of-type{
+    border-bottom: 0px solid black;
 }

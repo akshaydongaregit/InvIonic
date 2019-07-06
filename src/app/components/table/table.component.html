@@ -1,6 +1,6 @@
 
 <div class="table" id="inv-list" >
-    <table >
+    <table class="center">
       <tr>
         <th class="add-head"></th>
         <th *ngFor="let col of _settings.cols"> {{ col.title }} </th>
@@ -8,16 +8,18 @@
         <th class="delete-head"></th>
       </tr>
       <tr>
-        <td class="add" (click)="handleAddClick()"></td>
+        <td class="" (click)="handleAddClick()"> <div class="add action"></div> </td>
         <td *ngFor="let col of _settings.cols" > 
           <input *ngIf='col.filter' type="text"  (keyup)='doFilter($event,col.value);' class="filter" > 
         </td>
+        <td></td>
+        <td></td>
       </tr>
-      <tr *ngFor="let item of _dataSource;" >
-        <td class="save" (click)="handleSaveClick(item)" > </td>
+      <tr *ngFor="let item of _dataSource;">
+        <td (click)="handleSaveClick(item)"> <div class="save action"> </div> </td>
         <td *ngFor="let col of _settings.cols"> <input type="text" [(ngModel)]='item[col.value]' > </td>
-        <td class="view" (click)="handleViewClick(item)"> </td>
-        <td class="delete" (click)="handleDeleteClick(item)"> </td>
+        <td (click)="handleViewClick(item)"> <div class="view action"> </div> </td>
+        <td (click)="handleDeleteClick(item)"> <div class="delete action"> </div> </td>
       </tr>
     </table>
   </div>

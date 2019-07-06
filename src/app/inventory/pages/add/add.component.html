@@ -1,11 +1,12 @@
-<div class="container" >
+<div style="align-content:center;" > 
+<div class="form-container" >
 	<h2 class="title">Add Item</h2>	
 	<form>
 		<div class="form-group">
 			<label> Id </label>
 			<input type="text" class="form-control" name="id" readonly="" [(ngModel)]="_item.id" >
 		</div>
-		<div class="form-group">
+		<div class="form-group left">
 				<label>Code</label>
 				<input type="text" class="form-control" name="code" [(ngModel)]="_item.code" >
 		</div>
@@ -28,4 +29,5 @@
 		<button type="button" (click)="handleSave();" >Save</button>
 		<button type="button" [routerLink]="['/inventory']" >Cancel</button>
 	</form>
+</div>
 </div>

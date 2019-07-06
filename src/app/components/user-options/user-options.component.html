@@ -1,6 +1,8 @@
 <div id="user-options" [class.show]="show" >
   <ul>
-    <li class="link" > {{ user==''?'Please Login':user }} </li>
-    <li (click)="doLogout()" class="link" > Log Out </li>
+    <li class="link" *ngIf="user!=null"> {{ user==null || user==''?'Please Login':user }} </li>
+    <li (click)="doLogout()" class="link" *ngIf="user!=null"> Log Out </li>
+    <li routerLink="/login" class="link" *ngIf="user==null"> Log In </li>
+    <li routerLink="/signup" class="link" > Signup </li>
   </ul>  
 </div>

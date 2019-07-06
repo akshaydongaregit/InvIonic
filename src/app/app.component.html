@@ -32,4 +32,4 @@
 </div>
 
 
-<app-user-options [show]="showUserOptions" [user]="currentUser" ></app-user-options>
+<app-user-options [show]="showUserOptions" [user]="currentUser" (outClick)="checkOutClick($event)"></app-user-options>

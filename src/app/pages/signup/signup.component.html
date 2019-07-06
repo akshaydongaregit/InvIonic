@@ -1,39 +1,31 @@
-			<table>
-				<tr>
-				<td>Name</td>			
-				<td><input type="text" name="name"></td>
-				</tr>
-				<tr>
-				<td>Age</td>			
-				<td><input type="text" name="age"></td>
-				</tr>
-				<tr>
-				<td>Sex</td>			
-        <td>  Male  <input type="checkbox" name="gender">
-              Female  <input type="checkbox" name="gender"> 
-          </td>
-				</tr>
-				<tr>
-				<td>City</td>			
-				<td><input type="text" name="city"></td>
-				</tr>
-				<tr>
-				<td>Username</td>			
-				<td><input type="text" name="Uname"></td>
-				</tr>
-				<tr>
-				<td>Password</td>			
-				<td><input type="password" name="password"></td>
-				</tr>
-			</table>
-			<table>
-			<tr>
-			<td>
-			</td></tr>
-			</table>
-			<table>
-			<tr>
-				<td><button type="button">Sign In</button><br></td>
-				<td ><button type="button">Cancel</button><br>
-			</tr>
-			</table>
+<div class="form-container" >
+	<h2 class="title">Signup</h2>	
+	<form>
+			<div class="form-group">
+				<label> Name </label>
+				<input type="text" class="form-control" name="name"  [(ngModel)]="_input.name" >
+			</div>
+			<div class="form-group">
+				<label> Age </label>
+				<input type="text" class="form-control" name="id"  [(ngModel)]="_input.age" >
+			</div>
+			<div class="form-group">
+				<label> Sex </label>
+				<input type="text" class="form-control" name="id"  [(ngModel)]="_input.sex" >
+			</div>
+			<div class="form-group">
+				<label> Username </label>
+				<input type="text" class="form-control" name="id"  [(ngModel)]="_input.username" >
+			</div>
+			<div class="form-group">
+				<label> Password </label>
+				<input type="text" class="form-control" name="id"  [(ngModel)]="_input.password" >
+			</div>
+			<div class="form-group">
+				<label> Confirm Password </label>
+				<input type="text" class="form-control" name="id"  [(ngModel)]="_input.confPassword" >
+			</div>
+			<button type="button" (click)="handleSignup();" >Signup</button>
+			<button type="button" [routerLink]="['/dashboard']" >Cancel</button>
+	</form>
+</div>
