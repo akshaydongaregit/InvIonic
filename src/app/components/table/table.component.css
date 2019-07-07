@@ -31,8 +31,9 @@ tr:nth-last-child(1) td{
     border-bottom: 0px solid ;
 }
 tr:nth-child(1){
-    background-color: #116cc1db;
-    color: white;
+    background-color: #0b78dd;
+    color: #fff;
+    height: 50px;
 }
 
 .action{
@@ -79,8 +80,8 @@ table input {
 
 table tr:nth-child(2n+1) input {
     background: #35ad1d00;
-    color: #0b045ead;
-    border: 1px solid #0b045ead;
+    color: #0f0c36ad;
+    border: 1px solid #0b045e45;
 }
 table tr:nth-child(2n+4) input {
     background: #869edc00;
@@ -89,8 +90,52 @@ table tr:nth-child(2n+4) input {
 }
 
 table .filter {
-    border: 1px solid #466abc00;
-    background: #869edc78;
+    border: 2px solid #ef9a0933;
+    background: #fade064a;
     border-radius: 100px;
     height: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    table * {
+        font-size:90%;
+    }
+    .table {
+        width:95%;
+        overflow: auto;
+        padding-bottom: 2%;
+    }
+    .action{
+        width: 25px;
+    }
+    tr{
+        height: 35px;
+    }
+
+    /*Remove id and code in mobile view*/
+    tr:nth-child(1){
+        height: 40px;
+    }
+    tr th:nth-child(2){
+        display: none;
+    }
+    tr th:nth-child(3){
+        display: none;
+    }tr td:nth-child(2){
+        display: none;
+    }
+    tr td:nth-child(3){
+        display: none;
+    }
+    tr td{
+        color: #061e389e;
+    }
+    tr th {
+        font-size: 100;
+    }
+    table input {
+        font-size: 90%;
+    }
+
 }

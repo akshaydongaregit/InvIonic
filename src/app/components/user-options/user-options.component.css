@@ -31,3 +31,13 @@
 #user-options ul li:last-of-type{
     border-bottom: 0px solid black;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+
+    #user-options.show{
+        top:52px;
+        width:30%;
+        font-size: 95%;
+    }
+}

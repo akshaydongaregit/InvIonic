@@ -8,7 +8,7 @@ import { User } from './shared/user.model';
 })
 export class AppComponent {
   title = 'InvMan';
-  isSideBarActive = true;
+  isSideBarActive = false;
   showUserOptions = false;
   currentUser: string;
 

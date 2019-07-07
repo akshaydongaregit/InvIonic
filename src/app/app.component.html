@@ -1,11 +1,11 @@
-<div id="header">
+<div id="header" [class.active-menu]="isSideBarActive">
   <div id="title">
       <label class="title"> Ajara Agro <span> | Ready to serve farmers 24/7 </span> </label>    
   </div>
   <div class="user-nav">
       <ul>
-          <li class="msg" > </li>
-          <li class="prof" (click)="toggleShowUserOptions()" > </li>
+          <li> <div class="msg"> </div> </li>
+          <li (click)="toggleShowUserOptions()" > <div class="prof" ></div> </li>
       </ul>
   </div>
 
@@ -14,20 +14,20 @@
       <label class="note-3"> <span class="yellow"> created with </span> <span class="red"> &lt;3 </span> by <i> <span class="blue"> @Akshay Dongare. </span> </i> </label>
 </div>
 
-<div id="sidebar" [class.active]="isSideBarActive" >
+<div id="sidebar" [class.active-menu]="isSideBarActive" >
   <div class="toggle-btn" (click)="toggleSideBar()" >
       <span></span>
       <span></span>
       <span></span>
   </div>
   <ul>
-      <li class="home" routerLink="/dashboard" > </li>
-      <li class="inventory" routerLink="/inventory" > </li>
-      <li class="settings" routerLink="/settings" ></li>
+      <li> <div class="home menu" routerLink="/dashboard" ></div> <label>Dashboard</label> </li>
+      <li> <div class="inventory menu" routerLink="/inventory"></div> <label>Inventory</label> </li>
+      <li> <div class="settings menu" routerLink="/settings"></div> <label>Settings</label> </li>
   </ul>
 </div>
 
-<div id="body">
+<div id="body" [class.active-menu]="isSideBarActive">
   <router-outlet></router-outlet>
 </div>
 
