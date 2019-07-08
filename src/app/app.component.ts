@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,  OnInit } from '@angular/core';
 import { User } from './shared/user.model';
 
 @Component({
@@ -6,7 +6,9 @@ import { User } from './shared/user.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  
+  
   title = 'InvMan';
   isSideBarActive = false;
   showUserOptions = false;
@@ -15,6 +17,13 @@ export class AppComponent {
   //for user option click tracking
   _outClick = false;
   _toggleClick = false;
+
+  ngOnInit() { 
+    document.addEventListener('deviceready', function() { 
+      var device;
+    alert(device.platform); 
+    }, false); 
+    } 
 
  toggleSideBar() {
     this.isSideBarActive = !this.isSideBarActive;
